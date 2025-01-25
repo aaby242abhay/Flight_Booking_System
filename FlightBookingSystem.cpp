@@ -22,7 +22,8 @@ void FlightBookingSystem :: addUser(string userId, string name, double funds){
 
 void FlightBookingSystem :: searchFlight(string from, string to, int departDate, int paxCount){
     for(Flight flight : flights){
-        if(flight.from == from && flight.to == to && flight.departDate == departDate && flight.seats.size() == (size_t)paxCount){
+        // flight.printFlight();
+        if(flight.from == from && flight.to == to && flight.departDate == departDate && flight.seats.size() >= (size_t)paxCount){
             flight.printFlight();
         }
     }
@@ -58,6 +59,8 @@ void FlightBookingSystem :: bookFlight(string userId, string from, string to, st
     cout << "Flight not found! " << endl;
 }
 
-void FlightBookingSystem::addFlight(string flightNumber, string airline, string from, string to, int departDate, double departTime, double price, string fareType, vector<string> seats) {
-    flights.emplace_back(flightNumber, airline, from, to, departDate, departTime, price, fareType, seats);
+void FlightBookingSystem :: addFlight(string flightNumber, string airLine, string from, string to, int departDate, double departTime, double price, string fareType, vector<string> seats){
+    flights.emplace_back(flightNumber, airLine, from, to, departDate, departTime, price, fareType, seats);
 }
+
+

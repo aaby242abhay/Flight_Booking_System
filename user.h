@@ -11,6 +11,7 @@ class User{
         string name;
         double funds;
 
+        User();
         User(string id, string name, double funds);
         void printDetails();
 };

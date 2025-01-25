@@ -11,8 +11,9 @@ public:
     string userId;
     string flightNumber;
     vector<string> seats;
+    double totalCost;
 
-    Booking(string bid, string uid, string fn, vector<string> seats);
+    Booking(string bid, string uid, string fn, vector<string> seats, double totalCost);
 
 };
 
